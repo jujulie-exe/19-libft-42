@@ -6,7 +6,7 @@
 /*   By: jfranco <jfranco@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 13:02:42 by jfranco           #+#    #+#             */
-/*   Updated: 2024/10/16 16:19:35 by jfranco          ###   ########.fr       */
+/*   Updated: 2024/10/17 13:09:43 by jfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isdigit(int ch);
@@ -39,4 +40,6 @@ int		ft_isascii(int ch);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strchr(const char *s, int c);
 int		ft_tolower(int c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 #endif

@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfranco <jfranco@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 10:25:52 by jfranco           #+#    #+#             */
-/*   Updated: 2024/10/17 12:32:24 by jfranco          ###   ########.fr       */
+/*   Created: 2024/10/17 12:33:20 by jfranco           #+#    #+#             */
+/*   Updated: 2024/10/17 13:07:07 by jfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	l;
-	char	*dst;
+	char	*cat;
+	size_t	l1;
+	size_t	l2;
+	size_t	total;
 
-	i = 0;
-	l = 0;
-	if (s == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	dst = (char *) malloc((len + 1) * sizeof(char));
-	if (dst == NULL)
+	l1 = ft_strlen(s1);
+	l2 = ft_strlen(s2);
+	total = l1 + l2 + 1;
+	cat = (char *) malloc((total) * sizeof(char));
+	if (cat == NULL)
 		return (NULL);
-	while (l < len && l < ft_strlen(s))
-	{
-		dst[l] = s[start + l];
-		l++;
-	}
-	dst[l] = '\0';
-	return (dst);
+	ft_strlcpy(cat, s1, l1 + 1);
+	ft_strlcat(cat, s2, total);
+	return (cat);
 }
