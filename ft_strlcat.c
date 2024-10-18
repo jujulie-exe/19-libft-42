@@ -6,13 +6,12 @@
 /*   By: jfranco <jfranco@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 16:54:21 by jfranco           #+#    #+#             */
-/*   Updated: 2024/10/16 17:09:54 by jfranco          ###   ########.fr       */
+/*   Updated: 2024/10/18 15:55:30 by jfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t	ft_strlen(const char *s)
+#include "libft.h"
+/*size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
@@ -23,7 +22,7 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
-
+*/
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
