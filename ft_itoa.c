@@ -29,7 +29,7 @@ static	size_t	intlen(int nb)
 
 char	*ft_itoa(int n)
 {
-	int	long	num;
+	int long	num;
 	size_t		i;
 	char		*dst;
 
@@ -46,7 +46,7 @@ char	*ft_itoa(int n)
 		dst[0] = '-';
 		num = -num;
 	}
-	while  (num > 0)
+	while (num > 0)
 	{
 		dst[--i] = (num % 10) + '0';
 		num /= 10;

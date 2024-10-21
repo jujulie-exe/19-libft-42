@@ -10,30 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stddef.h>
-
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned char	*p;
-	size_t			i;
-
-	i = 0;
-	p = (unsigned char *)s;
-	while (i < n)
-	{
-		p[i] = 0;
-		i++;
-	}
-}
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	i;
 	size_t	total;
 	void	*call;
 
-	i = 0;
+	if (size && count > SIZE_MAX / count)
+		return (NULL);
 	total = size * count;
 	call = malloc(total);
 	if (call == NULL)
@@ -41,19 +26,3 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(call, total);
 	return (call);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	int i;
-	char *y;
-
-	i = 0;
-	y = ft_calloc(20, sizeof(char));
-	while (i < 20)
-	{
-		printf("%d", y[i]);
-		i++;
-	}
-}
-*/

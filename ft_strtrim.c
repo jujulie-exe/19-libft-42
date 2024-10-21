@@ -33,14 +33,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*dst;
 
 	start = 0;
-	final = ft_strlen(s1);
 	if (s1 == NULL || set == NULL)
 		return (NULL);
+	final = ft_strlen(s1);
+	if ((final - 1) == 0)
+		return ("");
 	while (s1[start] != '\0' && dove_sei(s1[start], set))
 		start++;
-	while (s1[final] > 0 && dove_sei(s1[final], set))
+	if (start == final)
+		return (ft_strdup(""));
+	while (final > 0 && dove_sei(s1[final - 1], set))
 		final--;
 	dst = (char *)malloc((final - start + 1) * sizeof(char));
-	ft_strlcpy(dst, &s1[start], start - final + 1);
+	if (dst == NULL)
+		return (NULL);
+	ft_strlcpy(dst, s1 + start, final - start + 1);
 	return (dst);
 }

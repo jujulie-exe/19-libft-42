@@ -35,6 +35,8 @@ char	*wrd_dup(const char *c, size_t start, size_t end)
 
 	i = 0;
 	wrd = (char *)malloc((end - start + 1) * sizeof(char));
+	if (wrd == NULL)
+		return (NULL);
 	while (start < end)
 	{
 		wrd[i] = c[start];
@@ -45,6 +47,26 @@ char	*wrd_dup(const char *c, size_t start, size_t end)
 	return (wrd);
 }
 
+static void	*ft_free(char **strs, size_t count)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(strs[i]);
+		i++;
+	}
+	free(strs);
+	return (NULL);
+}
+
+static void	ft_start(size_t *i, size_t *q)
+{
+	*i = 0;
+	*q = 0;
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**dst;
@@ -52,10 +74,7 @@ char	**ft_split(char const *s, char c)
 	size_t	q;
 	size_t	start;
 
-	/*if (s == NULL)
-		return (NULL);*/
-	j = 0;
-	q = 0;
+	ft_start(&j, &q);
 	dst = (char **)malloc((wrd_count(s, c) + 1) * sizeof(char *));
 	if (dst == NULL)
 		return (NULL);
@@ -67,6 +86,8 @@ char	**ft_split(char const *s, char c)
 			while (s[j] != '\0' && s[j] != c)
 				j++;
 			dst[q++] = wrd_dup(s, start, j);
+			if (dst[q - 1] == NULL)
+				return (ft_free(dst, q));
 		}
 		else
 			j++;

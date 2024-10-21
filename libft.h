@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isdigit(int ch);

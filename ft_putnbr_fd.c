@@ -27,7 +27,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (nbr < 10)
 	{
 		c = nbr + '0';
-		write(fd,&c , 1);
+		write(fd, &c, 1);
 	}
 	if (nbr >= 10)
 	{
