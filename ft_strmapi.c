@@ -6,7 +6,7 @@
 /*   By: jfranco <jfranco@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:44:22 by jfranco           #+#    #+#             */
-/*   Updated: 2024/10/18 16:52:01 by jfranco          ###   ########.fr       */
+/*   Updated: 2024/10/24 14:56:28 by jfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*dst;
 
 	i = 0;
-	if (s == NULL)
+	if (s == NULL || f == NULL)
 		return (NULL);
 	lens = ft_strlen(s);
 	dst = (char *)malloc((lens + 1) * sizeof(char));

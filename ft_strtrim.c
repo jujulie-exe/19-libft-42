@@ -6,7 +6,7 @@
 /*   By: jfranco <jfranco@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 14:12:45 by jfranco           #+#    #+#             */
-/*   Updated: 2024/10/18 16:06:31 by jfranco          ###   ########.fr       */
+/*   Updated: 2024/10/24 13:49:54 by jfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	final = ft_strlen(s1);
 	if ((final - 1) == 0)
-		return ("");
+		return (ft_strdup (""));
 	while (s1[start] != '\0' && dove_sei(s1[start], set))
 		start++;
 	if (start == final)

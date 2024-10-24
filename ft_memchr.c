@@ -6,7 +6,7 @@
 /*   By: jfranco <jfranco@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:46:51 by jfranco           #+#    #+#             */
-/*   Updated: 2024/10/16 13:57:58 by jfranco          ###   ########.fr       */
+/*   Updated: 2024/10/24 13:53:00 by jfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int	main()
-{
-	char	str[] = "culo and iper la y nella igna";
-	char	*ptr;
-
-	ptr = ft_memchr(str,'y', strlen(str));
-	if (ptr != NULL)
-	{
-		*ptr = 'A';
-		printf("%s",ptr);
-	}
-}
-*/
